@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <p><a href="@Url.Action("ViewApps","App")" class="btn btn-primary btn-lg">View All Apps &raquo;</a></p>
+            </div>
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    <p><a href="@Url.Action("CreateApp", "App")" class="btn btn-primary btn-lg">Create App &raquo;</a></p>
+                </div>
+            </div>
+        }
+    </div>

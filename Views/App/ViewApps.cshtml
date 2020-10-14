@@ -1,0 +1,42 @@
+﻿@model IEnumerable<OneSignal.Models.ViewApps>
+
+@{
+    ViewBag.Title = "View Apps";
+}
+
+<h2>ViewApp</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "CreateApp")
+    </p>
+}
+    @if (TempData["Success"] != null)
+    {
+        <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "UpdateApp", new { id = string.Format("{0}${1}", item.id, item.name) })
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
