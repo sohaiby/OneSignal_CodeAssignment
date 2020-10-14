@@ -19,4 +19,5 @@
 . Click on the Create App button. Enter the app details and click create, a new app will be created
 . Click on the View All Apps button. List of all apps will be shown on the screen. Click on Edit button of any app, 
   it will be open in edit mode, update the values and click update to update the values
+. The UserAuthKey of Signal App is stored in Web.Config > appSettings
 . Please contact me for any issues: sohaibyahmed999@hotmail.com
